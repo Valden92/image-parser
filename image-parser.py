@@ -1,9 +1,11 @@
 import requests
 from bs4 import BeautifulSoup
+import asyncio
 
 
 def upload_image(url, page_url):
     """Скачивает изображения со страницы html."""
+
     r = requests.get(page_url, allow_redirects=False)
     soup = BeautifulSoup(r.text, 'lxml')
     html_list = soup.find_all('div', class_="short_prev")
