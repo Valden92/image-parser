@@ -1,6 +1,5 @@
 import requests
 from bs4 import BeautifulSoup
-import asyncio
 
 
 def upload_image(url, page_url):
@@ -46,5 +45,4 @@ if link_start == link_end:
 else:
     for i in range(link_start, link_end + 1):
         new_url = '{}/{}/'.format(url, str(i))
-        print(new_url)
         upload_image(url, new_url)
